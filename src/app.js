@@ -69,6 +69,13 @@ const getCharacter = (urlApi) => {
        })
 }
 
+const printPagination = (info =>{
+    let render = `<li class="page-item ">
+            <a class="page-link" onclick="getCharacter('${info.prev}')">Previous</a></li>`
+    render += `<li class="page-item"><a class="page-link" onclick="getCharacter('${info.next}')" >Next</a></li>`
+    document.getElementById('pagination').innerHTML = render; 
+})
+
 const printData = (json => {
     json.results.forEach(character => {
     const card = document.createRange().createContextualFragment(/*html*/`
@@ -95,10 +102,5 @@ const printData = (json => {
     });
 })
 
-const printPagination = (info =>{
-    let html = `<li class="page-item "><a class="page-link" onclick="getCharacter('${info.prev}')">Previous</a></li>`
-    html += `<li class="page-item"><a class="page-link" onclick="getCharacter('${info.next}')" >Next</a></li>`
-    document.getElementById('pagination').innerHTML = html; 
-})
 
 getCharacter(API);
