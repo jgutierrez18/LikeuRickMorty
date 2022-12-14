@@ -1,4 +1,3 @@
-import { showAlert } from './messages'
 import "./styles.scss";
 import $ from 'jquery';
 import 'bootstrap';
@@ -74,6 +73,7 @@ const printPagination = (info =>{
             <a class="page-link" onclick="getCharacter('${info.prev}')">Previous</a></li>`
     render += `<li class="page-item"><a class="page-link" onclick="getCharacter('${info.next}')" >Next</a></li>`
     document.getElementById('pagination').innerHTML = render; 
+
 })
 
 const printData = (json => {
@@ -88,8 +88,7 @@ const printData = (json => {
             <div class="card-block">
             <img class="card-img-top" src="${character.image}" alt="Card image cap">
               <h4 class="card-title">${character.name}</h4>
-              <a href="#" class="card-link">link</a>
-              <a href="#" class="card-link">Second link</a>
+              <a href="404.html" class="card-link">link</a>
             </div>
           </div>
         </div>

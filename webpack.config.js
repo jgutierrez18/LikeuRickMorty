@@ -1,5 +1,5 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
     entry: './src/app.js',
     output: {
@@ -25,7 +25,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './src/index.html'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
